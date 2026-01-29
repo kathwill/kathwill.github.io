@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katharina Wille</title>
+    <title>Your Name - Academic Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,11 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #444;
             background-color: #fff;
+            font-weight: 300;
         }
 
         .container {
@@ -31,14 +32,16 @@
 
         header h1 {
             font-size: 2.5rem;
-            font-weight: 600;
+            font-weight: 300;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
             font-size: 1.1rem;
-            color: #666;
+            color: #777;
             margin-bottom: 20px;
+            font-weight: 300;
         }
 
         /* Navigation */
@@ -49,10 +52,11 @@
         }
 
         nav a {
-            color: #333;
+            color: #555;
             text-decoration: none;
             margin-right: 20px;
             font-size: 0.95rem;
+            font-weight: 300;
             transition: color 0.2s;
         }
 
@@ -124,10 +128,11 @@
 
         section h2 {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 300;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 1px solid #e0e0e0;
+            letter-spacing: -0.3px;
         }
 
         /* News Section */
@@ -173,7 +178,7 @@
 
         .pub-content h3 {
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 400;
             margin-bottom: 5px;
             line-height: 1.4;
         }
@@ -239,24 +244,71 @@
 <body>
     <div class="container">
         <header>
-            <h1>Katharina Wille</h1>
-            <p class="subtitle">PhD Student @ KTH Stockholm </p>
+            <h1>Your Name</h1>
+            <p class="subtitle">PhD Student @ University • <em>Your motto here</em></p>
         </header>
-        
-        <div class="profile">
-            <div class="profile-info">
-                <p>I'm a PhD student in the Department of [Your Department] at [Your University] advised by Prof. [Advisor Name]. My work focuses on [your research area] and aims to [your research goals].</p>
 
+        <nav>
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+            <a href="#news">News</a>
+        </nav>
+
+        <div class="profile">
+            <div class="profile-img-placeholder">👤</div>
+            <!-- Replace above with: <img src="your-photo.jpg" alt="Your Name" class="profile-img"> -->
+            
+            <div class="profile-info">
+                <div class="contact-info">
+                    <p>Your Building, Room Number</p>
+                    <p>City, Country</p>
+                    <p>yourname at university dot edu</p>
+                </div>
+                
+                <p>Hello, I'm [Your Name]. I'm a PhD student in the Department of [Your Department] at [Your University] advised by Prof. [Advisor Name]. My work focuses on [your research area] and aims to [your research goals].</p>
+                
+                <p style="margin-top: 15px;">Previously, I graduated from [Previous University] with a [Degree] in [Field]. During my time there, I worked with [Collaborators] on [Previous Research].</p>
+                
                 <div class="social-links">
                     <a href="#">google scholar</a>
                     <a href="#">github</a>
+                    <a href="#">linkedin</a>
                 </div>
             </div>
-            <img src="5.jpg" alt="Katharina Wille" class="profile-img">
         </div>
 
+        <section id="news">
+            <h2>news</h2>
+            
+            <div class="news-item">
+                <div class="news-date">Jan 29, 2025</div>
+                <div class="news-content">📄 One paper accepted to Conference 2025: "Your Paper Title Here".</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Dec 15, 2024</div>
+                <div class="news-content">🎓 Defended my thesis proposal on [Topic].</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Sep 10, 2024</div>
+                <div class="news-content">🏆 Received the [Award Name] for [Achievement].</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Jun 01, 2024</div>
+                <div class="news-content">☀️ Summer internship at [Company/Lab] working on [Topic].</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Mar 20, 2024</div>
+                <div class="news-content">📄 Paper accepted to [Conference/Journal]: "Previous Paper Title".</div>
+            </div>
+        </section>
+
         <section id="publications">
-            <h2>publications</h2>
+            <h2>selected publications</h2>
             
             <div class="publication">
                 <div class="pub-image-placeholder"></div>
