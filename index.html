@@ -1,27 +1,358 @@
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ResearchSection from "@/components/ResearchSection";
-import PublicationsSection from "@/components/PublicationsSection";
-import EducationSection from "@/components/EducationSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ResearchSection />
-        <PublicationsSection />
-        <EducationSection />
-        <ContactSection />
-      </main>
-      <Footer />
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        /* Profile Section */
+        .profile {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-img-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        /* Social Links */
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* News Section */
+        .news-item {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+
+        .news-content {
+            flex: 1;
+        }
+
+        /* Publications */
+        .publication {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .pub-image {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pub-image-placeholder {
+            width: 120px;
+            height: 80px;
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            flex-shrink: 0;
+        }
+
+        .pub-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .pub-venue {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .pub-links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 12px;
+            font-size: 0.85rem;
+        }
+
+        .pub-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .publication {
+                flex-direction: column;
+            }
+
+            .pub-image, .pub-image-placeholder {
+                width: 100%;
+                height: 150px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 10px 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p class="subtitle">PhD Student @ University • <em>Your motto here</em></p>
+        </header>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+            <a href="#news">News</a>
+        </nav>
+
+        <div class="profile">
+            <div class="profile-img-placeholder">👤</div>
+            <!-- Replace above with: <img src="your-photo.jpg" alt="Your Name" class="profile-img"> -->
+            
+            <div class="profile-info">
+                <div class="contact-info">
+                    <p>Your Building, Room Number</p>
+                    <p>City, Country</p>
+                    <p>yourname at university dot edu</p>
+                </div>
+                
+                <p>Hello, I'm [Your Name]. I'm a PhD student in the Department of [Your Department] at [Your University] advised by Prof. [Advisor Name]. My work focuses on [your research area] and aims to [your research goals].</p>
+                
+                <p style="margin-top: 15px;">Previously, I graduated from [Previous University] with a [Degree] in [Field]. During my time there, I worked with [Collaborators] on [Previous Research].</p>
+                
+                <div class="social-links">
+                    <a href="#">google scholar</a>
+                    <a href="#">github</a>
+                    <a href="#">linkedin</a>
+                </div>
+            </div>
+        </div>
+
+        <section id="news">
+            <h2>news</h2>
+            
+            <div class="news-item">
+                <div class="news-date">Jan 29, 2025</div>
+                <div class="news-content">📄 One paper accepted to Conference 2025: "Your Paper Title Here".</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Dec 15, 2024</div>
+                <div class="news-content">🎓 Defended my thesis proposal on [Topic].</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Sep 10, 2024</div>
+                <div class="news-content">🏆 Received the [Award Name] for [Achievement].</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Jun 01, 2024</div>
+                <div class="news-content">☀️ Summer internship at [Company/Lab] working on [Topic].</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">Mar 20, 2024</div>
+                <div class="news-content">📄 Paper accepted to [Conference/Journal]: "Previous Paper Title".</div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>selected publications</h2>
+            
+            <div class="publication">
+                <div class="pub-image-placeholder"></div>
+                <!-- Replace with: <img src="paper1-preview.png" alt="Paper preview" class="pub-image"> -->
+                <div class="pub-content">
+                    <h3>Your Paper Title Goes Here: Making It Interesting and Descriptive</h3>
+                    <p class="pub-authors"><strong>Your Name</strong>, Coauthor One, Coauthor Two, and Coauthor Three</p>
+                    <p class="pub-venue">Conference/Journal Name, 2025</p>
+                    <div class="pub-links">
+                        <a href="#">arXiv</a>
+                        <a href="#">PDF</a>
+                        <a href="#">Code</a>
+                        <a href="#">Website</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="publication">
+                <div class="pub-image-placeholder"></div>
+                <div class="pub-content">
+                    <h3>Another Important Paper Title About Your Research Area</h3>
+                    <p class="pub-authors">Coauthor One, <strong>Your Name</strong>, and Coauthor Two</p>
+                    <p class="pub-venue">Another Conference/Journal, 2024</p>
+                    <div class="pub-links">
+                        <a href="#">arXiv</a>
+                        <a href="#">PDF</a>
+                        <a href="#">Video</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="publication">
+                <div class="pub-image-placeholder"></div>
+                <div class="pub-content">
+                    <h3>Earlier Work on Related Topic With Interesting Results</h3>
+                    <p class="pub-authors"><strong>Your Name</strong> and Advisor Name</p>
+                    <p class="pub-venue">Workshop/Journal Name, 2023</p>
+                    <div class="pub-links">
+                        <a href="#">PDF</a>
+                        <a href="#">Slides</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>The best way to reach me is via email.</p>
+            <p style="margin-top: 10px;">© Copyright 2025 Your Name. Last updated: January 29, 2025.</p>
+        </footer>
     </div>
-  );
-};
-
-export default Index;
+</body>
+</html>
