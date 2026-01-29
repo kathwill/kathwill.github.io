@@ -40,8 +40,26 @@
         .subtitle {
             font-size: 1.1rem;
             color: #777;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 300;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .header-links a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .header-links a:hover {
+            color: #0052a3;
         }
 
         /* Profile Section */
@@ -59,6 +77,7 @@
             object-fit: cover;
             flex-shrink: 0;
             order: 2;
+            margin-top: -15px;
         }
 
         .profile-img-placeholder {
@@ -76,7 +95,6 @@
 
         .profile-info {
             flex: 1;
-            padding-top: 5px;
             order: 1;
         }
 
@@ -93,22 +111,6 @@
 
         .contact-info p {
             margin: 6px 0;
-        }
-
-        /* Social Links */
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #0066cc;
-            text-decoration: none;
-            margin-right: 20px;
-            font-size: 0.9rem;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
         }
 
         /* Sections */
@@ -204,6 +206,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .header-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
             .profile {
                 flex-direction: column;
                 align-items: center;
@@ -234,15 +242,15 @@
         <header>
             <h1>Katharina Wille</h1>
             <p class="subtitle">PhD Student @ KTH Stockholm</p>
+            <div class="header-links">
+                <a href="#" target="_blank">Google Scholar</a>
+                <a href="#" target="_blank">ORCID</a>
+                <a href="#" target="_blank">ResearchGate</a>
+            </div>
         </header>
         
         <div class="profile">
             <div class="profile-info">
-                <div class="social-links">
-                    <a href="#">google scholar</a>
-                    <a href="#">github</a>
-                </div>
-                
                 <p>I'm a PhD student in the Department of [Your Department] at [Your University] advised by Prof. [Advisor Name]. My work focuses on [your research area] and aims to [your research goals].</p>
             </div>
             <img src="5.jpg" alt="Katharina Wille" class="profile-img">
