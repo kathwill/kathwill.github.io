@@ -1,2 +1,2 @@
 # kathwill.github.io
-Personal Website
+Personal website
